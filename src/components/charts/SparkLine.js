@@ -7,7 +7,7 @@ import {
 
 class SparkLine extends React.PureComponent {
   render() {
-    const { id, height, width, color, data, type, currentColour } = this.props;
+    const { id, height, width, colour, data, type, currentColour } = this.props;
     return (
       <SparklineComponent
         id={id}
@@ -15,7 +15,7 @@ class SparkLine extends React.PureComponent {
         width={width}
         lineWidth={2}
         valueType="Numeric"
-        fill={color}
+        fill={colour}
         border={{ color: currentColour, width: 2 }}
         dataSource={data}
         xName="xval"

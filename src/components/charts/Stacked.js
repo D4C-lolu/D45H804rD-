@@ -16,7 +16,6 @@ import {
   stackedPrimaryXAxis,
   stackedPrimaryYAxis,
 } from "../../data/dummy";
-import { useStateContext } from "../../context/ContextProvider";
 
 const Stacked = (props) => {
   const { width, height } = props;
