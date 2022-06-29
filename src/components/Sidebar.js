@@ -4,12 +4,12 @@ import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { links } from "../data/dummy";
-import { itemsToOrder } from "@syncfusion/ej2/treemap";
 
 import { useStateContext } from "../context/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColour } =
+    useStateContext();
 
   const closeSideBar = () => {
     if (activeMenu === true && screenSize <= 900) {
@@ -32,7 +32,7 @@ const Sidebar = () => {
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
               <SiShopware />
-              <span>Shoppy</span>
+              <span>Super-Shop</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
@@ -58,6 +58,9 @@ const Sidebar = () => {
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
+                    style={({ isActive }) => ({
+                      background: isActive ? currentColour : "",
+                    })}
                   >
                     {link.icon}
                     <span className="capitalize">{link.name}</span>
