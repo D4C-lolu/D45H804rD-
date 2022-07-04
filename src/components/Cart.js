@@ -7,7 +7,7 @@ import { cartData } from "../data/dummy";
 import { Button } from ".";
 
 const Cart = () => {
-  const { currentColour } = useStateContext();
+  const { currentColour, setCart } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">
@@ -20,6 +20,7 @@ const Cart = () => {
             bgHoverColor="light-gray"
             size="2xl"
             borderRadius="50%"
+            handlerFunc={() => setCart(false)}
           />
         </div>
         {cartData?.map((item, index) => (
